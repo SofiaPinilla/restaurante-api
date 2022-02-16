@@ -4,6 +4,9 @@ const mongoose = require("mongoose");
 const { MONGO_URI } = require("./config/keys");
 const PORT = process.env.PORT || 3000;
 
+let cors = require('cors')
+
+app.use(cors())
 mongoose
   .connect(MONGO_URI, { useUnifiedTopology: true, useNewUrlParser: true })
   .then(() => console.log("conectado a mongoDB con éxito"))
